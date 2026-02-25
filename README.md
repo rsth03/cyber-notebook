@@ -1,3 +1,3 @@
-### HTB Academy Notes
+### Penetration Testing
 
 [Password Attacks](./PasswordAttacks.md)
