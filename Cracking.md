@@ -1,4 +1,4 @@
-## Password Attacks
+## Password Cracking
 
 ### Common password weaknesses:
 
@@ -23,26 +23,3 @@ Hybrid attacks exploit user complacency in adhering to password-change policies.
 ### Credential Stuffing
 
 Credential stuffing exploits password reuse by **trying breached passwords from other services.** This can lead to obtaining keys-to-the-castle if a personal email is compromised.
-
-### Hydra
-
-[Hydra](https://github.com/vanhauser-thc/thc-hydra) is a tool for **cracking passwords on network logins.** It supports HTTP(S) webapps, SSH, FTP, and more.
-
-Basic usage:
-```
-hydra [-l/-L LOGIN] [-p/-P PASS] [SERVICE]://[HOST]
-```
-
-HTTP Auth Example:
-```
-hydra -L usernames.txt -P passwords.txt www.example.com http-get
-```
-
-HTTP(S) Webapp Example:
-```
-hydra -l admin -P passwords.txt www.example.com http-post-form "/login:user=^USER^&pass=^PASS^:S=302"
-```
-Brute-Forcing Example:
-```
-hydra -l admin -x 6:8:abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789 192.168.1.100 rdp
-```
